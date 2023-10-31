@@ -12,5 +12,24 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+
+  const out = tutorials.map((e)=>{
+    let title = ""
+    let toCap = true
+    for(let i = 0; i < e.length ; i++){
+      if(toCap === true){
+        title += e[i].toUpperCase()
+        toCap = false;
+      }else if(e[i] === " "){
+        title += e[i]
+        toCap = true;
+      } else {
+        title += e[i]
+      }
+    }
+
+    return title
+  })
+
+    return out
 }
